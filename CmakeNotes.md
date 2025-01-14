@@ -49,26 +49,25 @@ message(${VAR_NAME})  # 使用变量
 
 3. 全局路径变量
 	
-	- 源代码相关路径
-	
-	``` cmake
+	源代码相关路径
+``` cmake
 CMAKE_SOURCE_DIR
 # 指向顶层 CMakeLists.txt 所在的目录。
-
+	
 CMAKE_CURRENT_SOURCE_DIR
 # 指向当前处理的 CMakeLists.txt 所在的目录。
 # 在多级目录的项目中，适用于获取子目录的源代码路径。
-	```
+```
 	
-	- 构建相关路径
+	构建相关路径
 	
-	``` cmake
+```
 CMAKE_BINARY_DIR
 # 指向顶层构建目录。
 
 CMAKE_CURRENT_BINARY_DIR
 # 指向当前处理的 CMakeLists.txt 对应的构建目录。
-	```
+```
 	
 	- 项目相关路径
 	
