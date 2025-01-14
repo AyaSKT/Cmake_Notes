@@ -39,58 +39,46 @@ endif()
 	```cmake
 	command(arguments ...)
 	```
-2. Variables 变量
+	
+1. Variables 变量
 	定义变量和使用变量
-	```cmake
+```cmake
 	set(VAR_NAME Value)   # 定义变量
 	message(${VAR_NAME})  # 使用变量
 ```
-	变量的内容可以为字符串，路径，列表等。
-	均区分大小写。
-	变量在使用时需要使用`${VARIABLE}`格式。
-	指令`message(${VAR_NAME})`可以将参数变量输出至终端。
 
-	+ ##### 源代码相关路径
-	 ```cmake
+3. 全局路径变量
+	- 源代码相关路径
+	```cmake
 		CMAKE_SOURCE_DIR
 		# 指向顶层 CMakeLists.txt 所在的目录。
 		
 		CMAKE_CURRENT_SOURCE_DIR
 		# 指向当前处理的 CMakeLists.txt 所在的目录。
+		# 在多级目录的项目中，适用于获取子目录的源代码路径。
 ```
-
-	+ ##### 构建相关路径
-	```cmake
+	- 构建相关路径
+		```cmake
 		CMAKE_BINARY_DIR
 		# 指向顶层构建目录。
 		
 		CMAKE_CURRENT_BINARY_DIR
 		# 指向当前处理的 CMakeLists.txt 对应的构建目录。
 ```
-
-	+ ##### 项目相关路径
-```cmake
+	- 项目相关路径
+	```cmake
 		PROJECT_SOURCE_DIR
 		# 项目的源代码目录。
-		# 由 project() 定义的项目根目录，适合多项目构建中标识当前项目的源代码位置。
+		# 由 project() 定义，适用于标识当前项目的根目录。
 		
 		PROJECT_BINARY_DIR
 		# 项目的构建目录。
-		# 由 project() 定义的项目构建路径，适合在多项目中区分不同项目的构建输出路径。
+		# 由 project() 定义，适用于当前项目的构建文件路径。
 ```
 
-		+ x
-```cmake
-CMAKE_INSTALL_PREFIX
-# 安装目标的根路径。
-# 默认路径：
-# - Linux/macOS：/usr/local
-# - Windows：C:/Program Files
-# 可以通过 set() 指令修改。
-```
+4. 安装路径变量
 
-
-**5. 模块路径**
+**5.模块路径**
 
 • CMAKE_MODULE_PATH
 
